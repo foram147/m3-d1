@@ -269,15 +269,12 @@ console.log(numberFactors(5));
 Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
 
 */
-const buildAcronym = (str = "") => {
-  const strArr = str.split(" ");
-  let res = "";
-  strArr.forEach((el) => {
-    const [char] = el;
-    if (char === char.toUpperCase() && char !== char.toLowerCase()) {
-      res += char;
-    }
-  });
-  return res;
-};
-console.log(buildAcronym("hello world"));
+function getDigit(word) {
+  return word[0];
+}
+function getAcronym(str) {
+  var words = str.split(" ");
+  var acr = words.map(getDigit);
+  return acr.join("").toUpperCase();
+}
+console.log(getAcronym("hello world"));
